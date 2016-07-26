@@ -10,6 +10,32 @@ function remove_custom_customizer($wp_customize) {
     $wp_customize->remove_control( 'homepage_slider_hide_control');
 }
 add_action( 'customize_register', 'remove_custom_customizer', 1000 );
+
+// Add arbitrary HTML to customizer
+if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'FUSF_Customize_Misc_Control' ) ) :
+class FUSF_Customize_Misc_Control extends WP_Customize_Control {
+    public $settings = 'blogname';
+    public $description = '';
+
+
+    public function render_content() {
+        switch ( $this->type ) {
+            default:
+            case 'text' :
+                echo '<p class="description">' . $this->description . '</p>';
+                break;
+
+            case 'heading':
+                echo '<span class="customize-control-title">' . esc_html( $this->label ) . '</span>';
+                break;
+
+            case 'line' :
+                echo '<hr />';
+                break;
+        }
+    }
+}
+endif;
 function add_custom_customizer($wp_customize) {
 
   // Change Homepage slider description
@@ -206,6 +232,142 @@ function add_custom_customizer($wp_customize) {
         'placeholder' => 'http://friendsofuptonstateforest.org'
       )
   ) );
+
+  // ICON BAR
+  $wp_customize->add_section( 'icon_bar', array(
+      'title'       => 'Icon Bar',
+      'description'     => __( 'This is a section to add or remove icons from the homepage icon bar.', 'adamos' ),
+      'panel'       => 'adamos_header_panel',
+      )
+  );
+
+  // FIRST ICON
+  // Upload first Icon
+  $wp_customize->add_setting( 'icon_1', array(
+    'transport'     => 'postMessage',
+    'sanitize_callback' => 'adamos_sanitize_text',
+  ));
+  $wp_customize->add_control( 'icon_1', array(
+      'label'       => __('Icon 1', 'adamos'),
+      'section'     => 'icon_bar',
+      'type'      => 'text',
+    ) );
+  // Upload first Icon link
+  $wp_customize->add_setting( 'icon_1_link', array(
+    'transport'     => 'postMessage',
+    'sanitize_callback' => 'adamos_sanitize_text',
+  ));
+  $wp_customize->add_control( 'icon_1_link', array(
+    'label'       => __('Icon 1 Link', 'adamos'),
+    'section'     => 'icon_bar',
+    'type'        => 'url',
+    'input_attrs' => array(
+      'placeholder' => 'http://friendsofuptonstateforest.org'
+    )
+  ));
+  // Upload first Icon Title
+  $wp_customize->add_setting( 'icon_1_title', array(
+    'transport'     => 'postMessage',
+    'sanitize_callback' => 'adamos_sanitize_text',
+  ));
+  $wp_customize->add_control( 'icon_1_title', array(
+      'label'       => __('Icon 1 Title', 'adamos'),
+      'section'     => 'icon_bar',
+      'type'      => 'text',
+    ) );
+// Line Break
+  $wp_customize->add_control(
+    new FUSF_Customize_Misc_Control(
+        $wp_customize,
+        'fusf_line_1',
+        array(
+            'section'  => 'icon_bar',
+            'type'     => 'line',
+        )
+    )
+);
+
+  // SECOND ICON
+  // Upload second Icon
+  $wp_customize->add_setting( 'icon_2', array(
+    'transport'     => 'postMessage',
+    'sanitize_callback' => 'adamos_sanitize_text',
+  ));
+  $wp_customize->add_control( 'icon_2', array(
+      'label'       => __('Icon 2', 'adamos'),
+      'section'     => 'icon_bar',
+      'type'      => 'text',
+    ) );
+  // Upload second Icon link
+    $wp_customize->add_setting( 'icon_2_link', array(
+    'transport'     => 'postMessage',
+    'sanitize_callback' => 'adamos_sanitize_text',
+  ));
+  $wp_customize->add_control( 'icon_2_link', array(
+    'label'       => __('Icon 2 Link', 'adamos'),
+    'section'     => 'icon_bar',
+    'type'        => 'url',
+    'input_attrs' => array(
+      'placeholder' => 'http://friendsofuptonstateforest.org'
+    )
+  ));
+  // Upload second Icon title
+  $wp_customize->add_setting( 'icon_2_title', array(
+    'transport'     => 'postMessage',
+    'sanitize_callback' => 'adamos_sanitize_text',
+  ));
+  $wp_customize->add_control( 'icon_2_title', array(
+      'label'       => __('Icon 2 Title', 'adamos'),
+      'section'     => 'icon_bar',
+      'type'      => 'text',
+    ) );
+
+// Line break
+  $wp_customize->add_control(
+    new FUSF_Customize_Misc_Control(
+        $wp_customize,
+        'fusf_line_2',
+        array(
+            'section'  => 'icon_bar',
+            'type'     => 'line',
+        )
+    )
+);
+
+  // THIRD ICON
+  // Upload first Icon
+  $wp_customize->add_setting( 'icon_3', array(
+    'transport'     => 'postMessage',
+    'sanitize_callback' => 'adamos_sanitize_text',
+  ));
+  $wp_customize->add_control( 'icon_3', array(
+      'label'       => __('Icon 3', 'adamos'),
+      'section'     => 'icon_bar',
+      'type'      => 'text',
+    ) );
+  // Upload third icon link
+  $wp_customize->add_setting( 'icon_3_link', array(
+    'transport'     => 'postMessage',
+    'sanitize_callback' => 'adamos_sanitize_text',
+  ));
+  $wp_customize->add_control( 'icon_3_link', array(
+    'label'       => __('Icon 3 Link', 'adamos'),
+    'section'     => 'icon_bar',
+    'type'        => 'url',
+    'input_attrs' => array(
+      'placeholder' => 'http://friendsofuptonstateforest.org'
+    )
+  ));
+  // Upload third icon title
+  $wp_customize->add_setting( 'icon_3_title', array(
+    'transport'     => 'postMessage',
+    'sanitize_callback' => 'adamos_sanitize_text',
+  ));
+  $wp_customize->add_control( 'icon_3_title', array(
+      'label'       => __('Icon 3 Title', 'adamos'),
+      'section'     => 'icon_bar',
+      'type'      => 'text',
+    ) );
 }
 add_action( 'customize_register', 'add_custom_customizer', 1000 );
 ?>

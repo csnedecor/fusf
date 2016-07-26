@@ -87,3 +87,6 @@
 .header-image{
   line-height: 0;
 }
+.divider:after{
+  content: "<hr />";
+}

@@ -249,32 +249,50 @@
         <?php endif; ?><!-- End Flexslider -->
       <?php endif; ?><!-- End is_front_page -->
 
+      <?php
+        $icon_1 = get_theme_mod('icon_1');
+        $icon_2 = get_theme_mod('icon_2');
+        $icon_3 = get_theme_mod('icon_3');
+        $icon_1_title = get_theme_mod('icon_1_title');
+        $icon_2_title = get_theme_mod('icon_2_title');
+        $icon_3_title = get_theme_mod('icon_3_title');
+        $icon_1_link = get_theme_mod('icon_1_link');
+        $icon_2_link = get_theme_mod('icon_2_link');
+        $icon_3_link = get_theme_mod('icon_3_link');
+      ?>
+
       <div class="info-bar">
         <div class="site-main padding-5 text-right">
 
+        <?php if (!empty($icon_1) || !empty($icon_1_title)){ ?>
           <div class="icons">
-            <a href="/shop">
-              <i class="fa fa-shopping-cart fa-lg">
-                <br/><span>Shop</span>
+            <a href="<?php echo $icon_1_link ?>">
+              <i class="fa <?php echo $icon_1 ?> fa-lg">
+                <br/><span><?php echo $icon_1_title ?></span>
               </i>
             </a>
           </div><!-- /.icons -->
+        <?php } ?>
 
+        <?php if (!empty($icon_2) || !empty($icon_2_title)){ ?>
           <div class="icons">
-            <a href="/calendar">
-              <i class="fa fa-calendar fa-lg">
-                <br/><span>Calendar</span>
+            <a href="<?php echo $icon_2_link ?>">
+              <i class="fa <?php echo $icon_2 ?> fa-lg">
+                <br/><span><?php echo $icon_2_title ?></span>
               </i>
             </a>
           </div><!-- /.icons -->
+        <?php } ?>
 
+        <?php if (!empty($icon_3) || !empty($icon_3_title)){ ?>
           <div class="icons">
-            <a href="/calendar">
-              <i class="fa fa-picture-o fa-lg">
-                <br/><span>Photos</span>
+            <a href="<?php echo $icon_3_link ?>">
+              <i class="fa <?php echo $icon_3 ?> fa-lg">
+                <br/><span><?php echo $icon_3_title ?></span>
               </i>
             </a>
           </div><!-- /.icons -->
+        <?php } ?>
 
           <div class="icons">
             <a href="/alerts">
