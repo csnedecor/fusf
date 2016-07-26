@@ -98,7 +98,7 @@
 
     <?php
         $header_image = get_header_image();
-        if ( ! empty( $header_image ) ) : ?>
+        if ( !is_front_page() && ! empty( $header_image ) || is_front_page() && get_theme_mod('homepage_slider_hide') ) : ?>
 
             <div class="header-image">
           <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
@@ -116,46 +116,179 @@
         <?php if(! get_theme_mod('homepage_slider_hide')): ?>
 
             <?php
+              $slide_1_id = get_theme_mod('homepage_slider_image_1');
+              if ($slide_1_id != 0){
+                $slide_1_url = wp_get_attachment_url($slide_1_id);
+              }
+              $slide_2_id = get_theme_mod('homepage_slider_image_2');
+              if ($slide_2_id != 0){
+                $slide_2_url = wp_get_attachment_url($slide_2_id);
+              }
+              $slide_3_id = get_theme_mod('homepage_slider_image_3');
+              if ($slide_3_id != 0){
+                $slide_3_url = wp_get_attachment_url($slide_3_id);
+              }
 
-              $featured_cat   =   get_theme_mod( 'homepage_slider_cat' );
-              $number         =   get_theme_mod( 'homepage_slider_slide_no' );
-
-              $the_query     =   new WP_Query( array(
-                'cat'             => $featured_cat,
-                'posts_per_page'  => $number,
-                'meta_query'      => array(
-                    array(
-                      'key'           => '_thumbnail_id',
-                      'compare'       => 'EXISTS',
-                    ),
-                ),
-              ));
-
+              $slide_1_title = get_theme_mod('slide_1_title');
+              $slide_2_title = get_theme_mod('slide_2_title');
+              $slide_3_title = get_theme_mod('slide_3_title');
+              $slide_1_caption = get_theme_mod('slide_1_caption');
+              $slide_2_caption = get_theme_mod('slide_2_caption');
+              $slide_3_caption = get_theme_mod('slide_3_caption');
+              $slide_1_link = get_theme_mod('slide_1_link');
+              $slide_2_link = get_theme_mod('slide_2_link');
+              $slide_3_link = get_theme_mod('slide_3_link');
             ?>
 
             <div class="flex-container">
               <div class="flexslider">
                 <ul class="slides">
-                  <?php  while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
+                  <?php if (!empty($slide_1_url)){ ?>
                     <li>
-                      <?php the_post_thumbnail(); ?>
-                      <div class="caption_wrap">
-                        <div class="flex-caption">
-                          <div class="flex-caption-title">
-                            <a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
+                      <img src=<?php echo $slide_1_url ?>>
+                      <?php if (!empty($slide_1_title)|| (!empty($slide_1_caption))) { ?>
+                        <div class="caption_wrap">
+                          <div class="flex-caption">
+                            <?php if (!empty($slide_1_title)) { ?>
+                              <div class="flex-caption-title">
+                                <?php if (!empty($slide_1_link)) { ?>
+                                  <a href="<?php echo $slide_1_link ?>">
+                                <?php } ?>
+                                <?php echo $slide_1_title?>
+                                <?php if (!empty($slide_1_link)) { ?>
+                                  </a>
+                                <?php } ?>
+                              </div>
+                            <?php } ?>
+                            <?php if (!empty($slide_1_caption)) { ?>
+                              <p>
+                                <?php if (!empty($slide_1_link)) { ?>
+                                  <a href="<?php echo $slide_1_link ?>">
+                                <?php } ?>
+                                <?php echo $slide_1_caption ?>
+                                <?php if (!empty($slide_1_link)) { ?>
+                                  </a>
+                                <?php } ?>
+                                </p>
+                            <?php } ?>
                           </div>
-                          <p><?php echo esc_html(adamos_get_slider_excerpt()); ?> <a href="<?php the_permalink() ?>">...</a></p>
                         </div>
-                      </div>
+                      <?php }?>
                     </li>
-                  <?php endwhile; ?>
+                  <?php } ?>
+                  <?php if (!empty($slide_2_url)){ ?>
+                    <li>
+                      <img src=<?php echo $slide_2_url ?>>
+                      <?php if (!empty($slide_2_title)|| (!empty($slide_2_caption))) { ?>
+                        <div class="caption_wrap">
+                          <div class="flex-caption">
+                            <?php if (!empty($slide_2_title)) { ?>
+                              <div class="flex-caption-title">
+                                <?php if (!empty($slide_2_link)) { ?>
+                                  <a href="<?php echo $slide_2_link ?>">
+                                <?php } ?>
+                                <?php echo $slide_2_title?>
+                                <?php if (!empty($slide_2_link)) { ?>
+                                  </a>
+                                <?php } ?>
+                              </div>
+                            <?php } ?>
+                            <?php if (!empty($slide_2_caption)) { ?>
+                              <p>
+                                <?php if (!empty($slide_2_link)) { ?>
+                                  <a href="<?php echo $slide_2_link ?>">
+                                <?php } ?>
+                                <?php echo $slide_2_caption ?>
+                                <?php if (!empty($slide_2_link)) { ?>
+                                  </a>
+                                <?php } ?>
+                                </p>
+                            <?php } ?>
+                          </div>
+                        </div>
+                      <?php } ?>
+                    </li>
+                  <?php } ?>
+                  <?php if (!empty($slide_3_url)){ ?>
+                    <li>
+                      <img src=<?php echo $slide_3_url ?>>
+                      <?php if (!empty($slide_3_title) || (!empty($slide_3_caption))) { ?>
+                        <div class="caption_wrap">
+                          <div class="flex-caption">
+                            <?php if (!empty($slide_3_title)) { ?>
+                              <div class="flex-caption-title">
+                                <?php if (!empty($slide_3_link)) { ?>
+                                  <a href="<?php echo $slide_3_link ?>">
+                                <?php } ?>
+                                <?php echo $slide_3_title?>
+                                <?php if (!empty($slide_3_link)) { ?>
+                                  </a>
+                                <?php } ?>
+                              </div>
+                            <?php } ?>
+                            <?php if (!empty($slide_3_caption)) { ?>
+                              <p>
+                                <?php if (!empty($slide_3_link)) { ?>
+                                  <a href="<?php echo $slide_3_link ?>">
+                                <?php } ?>
+                                <?php echo $slide_3_caption ?>
+                                <?php if (!empty($slide_3_link)) { ?>
+                                  </a>
+                                <?php } ?>
+                              </p>
+                            <?php } ?>
+                          </div>
+                        </div>
+                      <?php } ?>
+                    </li>
+                  <?php } ?>
                 </ul>
               </div>
             </div>
 
         <?php endif; ?><!-- End Flexslider -->
+      <?php endif; ?><!-- End is_front_page -->
 
+      <div class="info-bar">
+        <div class="site-main padding-5 text-right">
 
+          <div class="icons">
+            <a href="/shop">
+              <i class="fa fa-shopping-cart fa-lg">
+                <br/><span>Shop</span>
+              </i>
+            </a>
+          </div><!-- /.icons -->
+
+          <div class="icons">
+            <a href="/calendar">
+              <i class="fa fa-calendar fa-lg">
+                <br/><span>Calendar</span>
+              </i>
+            </a>
+          </div><!-- /.icons -->
+
+          <div class="icons">
+            <a href="/calendar">
+              <i class="fa fa-picture-o fa-lg">
+                <br/><span>Photos</span>
+              </i>
+            </a>
+          </div><!-- /.icons -->
+
+          <div class="icons">
+            <a href="/alerts">
+              <i class="fa fa-exclamation-triangle fa-lg">
+                <div class="alert-number">3</div>
+                <br/><span>Alerts</span>
+              </i>
+            </a>
+          </div><!-- /.icons -->
+
+        </div><!-- /.header_container -->
+      </div>
+
+      <?php if(is_front_page()):?>
 
         <?php if(! get_theme_mod('homepage_promotional_bool')): ?>
 

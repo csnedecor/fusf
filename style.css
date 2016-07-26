@@ -8,3 +8,82 @@
  License:      This child theme is for Friends of Upton State Forest's use only.
  Text Domain:  fusf
 */
+#masthead-top{
+  border-bottom: none;
+}
+#masthead-wrap{
+  background-color: #111111;
+}
+.site-header .site-introduction{
+  padding-top: 10px;
+}
+.main-navigation{
+  padding-top: 10px;
+}
+.header_container{
+  min-height: 0px;
+  background-color: #111111;
+}
+.main-navigation li:hover > a,
+.main-navigation li.current_page_item a,
+.main-navigation li.current-menu-item a{
+  background-color: #006600;
+}
+.menu-toggle{
+  background-color: #111111;
+}
+.main-small-navigation .menu{
+  background-color: #111111;
+}
+.main-small-navigation .menu li a{
+  color: #FFF;
+}
+.main-small-navigation li:hover > a,
+.main-small-navigation li.current_page_item a,
+.main-small-navigation li.current-menu-item a,
+.main-small-navigation ul ul a:hover{
+  color: #6abf6c;
+}
+.info-bar{
+  background-color: black;
+  color: white;
+}
+.padding-5{
+  padding: 5px;
+}
+.text-right{
+  text-align: right;
+}
+.info-bar i{
+  color: white;
+  padding: 10px;
+}
+.info-bar i:hover{
+  background: #b3b3b3;
+  padding: 10px;
+}
+.info-bar .icons{
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.alert-number{
+  background: red;
+  min-width: 15px;
+  min-height: 15px;
+  display: inline;
+  margin-left: -11px;
+  top: 3px;
+  position: absolute;
+  font-size: 8px;
+  text-align: center;
+  }
+.info-bar .icons span{
+  margin: 0px;
+  padding: 0px;
+  text-transform: uppercase;
+  font-size: 10px;
+}
+.header-image{
+  line-height: 0;
+}
