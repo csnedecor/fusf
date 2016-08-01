@@ -8,45 +8,107 @@
  License:      This child theme is for Friends of Upton State Forest's use only.
  Text Domain:  fusf
 */
+/* Logo colors:
+  Light Green: #3b6525;
+  Dark Green: #325212;
+  Brown: #514a3c;
+*/
+/* General Styles */
+body{
+  color: #514a3c;
+}
+.divider:after{
+  content: "<hr />";
+}
+a, a:visited{
+  color: #3b6525;
+}
+a:hover{
+  background: green;
+  color: white;
+  border-radius: 4px;
+}
+
+/* Menu */
 #masthead-top{
   border-bottom: none;
 }
 #masthead-wrap{
-  background-color: #111111;
+  background-color: #ffffff;
 }
 .site-header .site-introduction{
   padding-top: 10px;
 }
-.main-navigation{
-  padding-top: 10px;
+.site-header a img{
+  margin: 0.5em auto 0.5em;
+  height: 70px;
 }
 .header_container{
   min-height: 0px;
-  background-color: #111111;
+  background-color: #ffffff;
+}
+.main-navigation a{
+  color: #325212;
+}
+.main-navigation ul ul li{
+  border-bottom: 1px solid #514a3c;
+}
+.main-navigation ul ul a,
+.main-navigation ul ul ul a,
+.main-navigation ul ul ul ul a{
+  color: #325212;
+}
+
+.main-navigation ul ul,
+.main-navigation ul ul ul,
+.main-navigation ul ul ul ul{
+  background: #ffffff;
+}
+.main-navigation ul ul a:hover,
+.main-navigation ul ul a:active,
+.main-navigation ul ul ul a:hover,
+.main-navigation ul ul ul a:active,
+.main-navigation ul ul ul ul a:hover,
+.main-navigation ul ul ul ul a:active{
+  background-color: #325212;
 }
 .main-navigation li:hover > a,
 .main-navigation li.current_page_item a,
 .main-navigation li.current-menu-item a{
-  background-color: #006600;
+  background-color: #325212;
 }
 .menu-toggle{
-  background-color: #111111;
+  background-color: #ffffff;
+  color: #325212;
+  border-bottom: 1px solid #514a3c;
+  border-top: 1px solid #514a3c;
 }
 .main-small-navigation .menu{
-  background-color: #111111;
+  background-color: #ffffff;
 }
 .main-small-navigation .menu li a{
-  color: #FFF;
+  color: #325212;
+  padding: 7px;
+  margin: 5px;
+  display: block;
+}
+.main-small-navigation li{
+  display: block;
 }
 .main-small-navigation li:hover > a,
 .main-small-navigation li.current_page_item a,
 .main-small-navigation li.current-menu-item a,
 .main-small-navigation ul ul a:hover{
-  color: #6abf6c;
+  background: #325212;
+  color: #ffffff;
+  border-radius: 10px;
+  display: block;
 }
 .info-bar{
-  background-color: black;
+  background-color: #325212;
   color: white;
+  border-top: 1px solid #514a3c;
+  border-bottom: 1px solid #514a3c;
 }
 .padding-5{
   padding: 5px;
@@ -59,7 +121,7 @@
   padding: 10px;
 }
 .info-bar i:hover{
-  background: #b3b3b3;
+  background: #3b6525;
   padding: 10px;
 }
 .info-bar .icons{
@@ -84,9 +146,68 @@
   text-transform: uppercase;
   font-size: 10px;
 }
+
+/* Header */
 .header-image{
   line-height: 0;
 }
-.divider:after{
-  content: "<hr />";
+.flex-caption{
+  color: #325212;
 }
+.flex-caption-title{
+  background-color: #ffffff;
+}
+.flex-caption p{
+  background-color: rgba(255, 255, 255, 0.7);
+  text-shadow: none;
+  font-weight: bold;
+}
+
+/* Pages */
+.entry-title{
+  color: #514a3c;
+}
+
+/* Alert Page */
+.alert-title.red{
+  color: #da1b1b;
+}
+.alert-title.orange{
+  color: #ed7e31;
+}
+.alert-title.green{
+  color: #3b6525;
+}
+.alert-title i{
+  width: 40px;
+}
+.alert-caption{
+  padding-left: 48px;
+}
+.read-more{
+  text-align: right;
+}
+.alert{
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+@media only screen and (max-width: 800px){
+  .flex-caption{
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .info-bar .icons{
+    display: inline-block;
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 10px;
+  }
+  .alert-number{
+    min-width: 10px;
+    min-height: 10px;
+  }
+  .info-bar .icons span{
+    font-size: 8px;
+  }
+}
+
