@@ -24,7 +24,7 @@ a, a:visited{
   color: #3b6525;
 }
 a:hover{
-  background: green;
+  background: #3b6525;
   color: white;
   border-radius: 4px;
 }
@@ -162,10 +162,21 @@ a:hover{
   text-shadow: none;
   font-weight: bold;
 }
+.flex-direction-nav a{
+  background: url(images/bg_direction_nav2.png) no-repeat 0 0;
+}
 
 /* Pages */
 .entry-title{
   color: #514a3c;
+}
+
+/* Home Page */
+.featuretext_top p.blurb{
+  margin-bottom: 20px;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Alert Page */
@@ -189,6 +200,25 @@ a:hover{
 }
 .alert{
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.alerts{
+  padding-bottom: 1.5em;
+}
+
+/* Footer */
+.site-footer{
+  background: #325212;
+}
+.footer_container{
+  background: #325212;
+}
+.site-info{
+  background-color: #3b6525;
+  color: white;
+  font-size: 1rem;
+}
+.site-info a{
+  color: #ccc;
 }
 
 @media only screen and (max-width: 800px){

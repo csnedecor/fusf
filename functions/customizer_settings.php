@@ -275,6 +275,7 @@ function add_custom_customizer($wp_customize) {
       'section'     => 'icon_bar',
       'type'      => 'text',
     ) );
+
 // Line Break
   $wp_customize->add_control(
     new FUSF_Customize_Misc_Control(
@@ -368,6 +369,18 @@ function add_custom_customizer($wp_customize) {
       'section'     => 'icon_bar',
       'type'      => 'text',
     ) );
+
+  $wp_customize->add_setting( 'featured_blurb', array(
+    'transport'     => 'postMessage',
+    'sanitize_callback' => 'adamos_sanitize_text',
+  ));
+  $wp_customize->add_control( 'featured_blurb', array(
+      'label'       => __( 'Text', 'adamos' ),
+      'section'     => 'featured_section_top',
+      'settings'    => 'featured_blurb',
+      'type'      => 'textarea',
+      'priority'    => 25,
+    ));
 }
 add_action( 'customize_register', 'add_custom_customizer', 1000 );
 ?>

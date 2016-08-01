@@ -304,6 +304,10 @@
 
                 <h3><?php if( get_theme_mod( 'featured_textbox' ) ){ echo esc_html(get_theme_mod( 'featured_textbox' ) ); } else { _e( 'Promotional Bar', 'adamos' ); } ?></h3>
 
+                <?php if( get_theme_mod( 'featured_blurb' ) ){ ?>
+                  <p class="blurb"><?php echo esc_html(get_theme_mod( 'featured_blurb' ) ); ?></p>
+                <?php } ?>
+
                 <?php if ( get_theme_mod( 'featured_button_url' ) ) : ?>
                   <p><a href="<?php echo esc_url( get_theme_mod( 'featured_button_url' ) ); ?>" ><?php echo esc_attr(get_theme_mod( 'featured_button_txt' )); ?></a></p>
                 <?php endif; ?>
