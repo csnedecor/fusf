@@ -145,100 +145,82 @@
                 <ul class="slides">
                   <?php if (!empty($slide_1_url)){ ?>
                     <li>
+                      <?php if (!empty($slide_1_link)) { ?>
+                        <a href="<?php echo $slide_1_link ?>">
+                      <?php } ?>
                       <img src=<?php echo $slide_1_url ?>>
                       <?php if (!empty($slide_1_title)|| (!empty($slide_1_caption))) { ?>
                         <div class="caption_wrap">
                           <div class="flex-caption">
                             <?php if (!empty($slide_1_title)) { ?>
                               <div class="flex-caption-title">
-                                <?php if (!empty($slide_1_link)) { ?>
-                                  <a href="<?php echo $slide_1_link ?>">
-                                <?php } ?>
                                 <?php echo $slide_1_title?>
-                                <?php if (!empty($slide_1_link)) { ?>
-                                  </a>
-                                <?php } ?>
                               </div>
                             <?php } ?>
                             <?php if (!empty($slide_1_caption)) { ?>
                               <p>
-                                <?php if (!empty($slide_1_link)) { ?>
-                                  <a href="<?php echo $slide_1_link ?>">
-                                <?php } ?>
                                 <?php echo $slide_1_caption ?>
-                                <?php if (!empty($slide_1_link)) { ?>
-                                  </a>
-                                <?php } ?>
                                 </p>
                             <?php } ?>
                           </div>
                         </div>
+                      <?php if (!empty($slide_1_link)) { ?>
+                        </a>
+                      <?php } ?>
                       <?php }?>
                     </li>
                   <?php } ?>
                   <?php if (!empty($slide_2_url)){ ?>
                     <li>
+                      <?php if (!empty($slide_2_link)) { ?>
+                        <a href="<?php echo $slide_2_link ?>">
+                      <?php } ?>
                       <img src=<?php echo $slide_2_url ?>>
                       <?php if (!empty($slide_2_title)|| (!empty($slide_2_caption))) { ?>
                         <div class="caption_wrap">
                           <div class="flex-caption">
                             <?php if (!empty($slide_2_title)) { ?>
                               <div class="flex-caption-title">
-                                <?php if (!empty($slide_2_link)) { ?>
-                                  <a href="<?php echo $slide_2_link ?>">
-                                <?php } ?>
                                 <?php echo $slide_2_title?>
-                                <?php if (!empty($slide_2_link)) { ?>
-                                  </a>
-                                <?php } ?>
                               </div>
                             <?php } ?>
                             <?php if (!empty($slide_2_caption)) { ?>
                               <p>
-                                <?php if (!empty($slide_2_link)) { ?>
-                                  <a href="<?php echo $slide_2_link ?>">
-                                <?php } ?>
                                 <?php echo $slide_2_caption ?>
-                                <?php if (!empty($slide_2_link)) { ?>
-                                  </a>
-                                <?php } ?>
                                 </p>
                             <?php } ?>
                           </div>
                         </div>
+                        <?php if (!empty($slide_2_link)) { ?>
+                          </a>
+                        <?php } ?>
                       <?php } ?>
                     </li>
                   <?php } ?>
                   <?php if (!empty($slide_3_url)){ ?>
                     <li>
+                      <?php if (!empty($slide_3_link)) { ?>
+                        <a href="<?php echo $slide_3_link ?>">
+                      <?php } ?>
                       <img src=<?php echo $slide_3_url ?>>
                       <?php if (!empty($slide_3_title) || (!empty($slide_3_caption))) { ?>
                         <div class="caption_wrap">
                           <div class="flex-caption">
                             <?php if (!empty($slide_3_title)) { ?>
                               <div class="flex-caption-title">
-                                <?php if (!empty($slide_3_link)) { ?>
-                                  <a href="<?php echo $slide_3_link ?>">
-                                <?php } ?>
                                 <?php echo $slide_3_title?>
-                                <?php if (!empty($slide_3_link)) { ?>
-                                  </a>
-                                <?php } ?>
                               </div>
                             <?php } ?>
                             <?php if (!empty($slide_3_caption)) { ?>
                               <p>
-                                <?php if (!empty($slide_3_link)) { ?>
-                                  <a href="<?php echo $slide_3_link ?>">
-                                <?php } ?>
                                 <?php echo $slide_3_caption ?>
-                                <?php if (!empty($slide_3_link)) { ?>
-                                  </a>
-                                <?php } ?>
                               </p>
                             <?php } ?>
                           </div>
                         </div>
+                        <?php if (!empty($slide_3_link)) { ?>
+                          </a>
+                        <?php } ?>
                       <?php } ?>
                     </li>
                   <?php } ?>
@@ -294,14 +276,22 @@
           </div><!-- /.icons -->
         <?php } ?>
 
+        <?php if (have_rows('alerts', 229)) :
+
+          // vars
+          $alert_count = count(get_field('alerts', 229));
+
+        endif;
+        if ($alert_count >= 1) { ?>
           <div class="icons">
             <a href="/alerts">
               <i class="fa fa-exclamation-triangle fa-lg">
-                <div class="alert-number">3</div>
+                <div class="alert-number"><?php echo $alert_count ?></div>
                 <br/><span>Alerts</span>
               </i>
             </a>
           </div><!-- /.icons -->
+        <?php } ?>
 
         </div><!-- /.header_container -->
       </div>
