@@ -7,6 +7,29 @@ function fusf_enqueue_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'fusf_enqueue_styles' );
 
+/*
+ * Register summary tab for Membership purchases
+ */
+function woo_summary_tab( $tabs ) {
+  global $post;
+  if($post->ID == 484){
+    $tabs['summary_tab'] = array(
+        'title' => __('Purchase','woocommerce'),
+        'priority' => 9,
+        'callback' => 'woo_summary_tab_content'
+    );
+  }
+    return $tabs;
+}
+/*
+ * Place summary content in custom tab
+ */
+
+function woo_summary_tab_content() {
+  do_action( 'woocommerce_single_product_summary' );
+}
+add_filter( 'woocommerce_product_tabs', 'woo_summary_tab' );
+
 // Theme Options
 include('functions/customizer_settings.php');
 ?>

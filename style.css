@@ -9,9 +9,9 @@
  Text Domain:  fusf
 */
 /* Logo colors:
-  Light Green: #3b6525;
+  Light Green: #3b6525;  rgba(59, 101, 37, 1);
   Dark Green: #325212;
-  Brown: #514a3c;
+  Brown: #514a3c;  rgba(81, 74, 60, 1);
 */
 /* General Styles */
 body{
@@ -23,11 +23,11 @@ body{
 a, a:visited{
   color: #3b6525;
 }
-a:hover{
+/*a:hover{
   background: #3b6525;
   color: white;
   border-radius: 4px;
-}
+}*/
 
 /* Menu */
 #masthead-top{
@@ -170,6 +170,19 @@ a:hover{
 .entry-title{
   color: #514a3c;
 }
+.entry-content a,
+.entry-content a:visited,
+.entry-summary a,
+.entry-summary a:visited{
+  color: rgba(59, 101, 37, 0.8);
+}
+#primary{
+  margin: 0 -37% 0 0;
+  width: 80%;
+}
+#secondary{
+  width: 30%;
+}
 
 /* Home Page */
 .featuretext_top p.blurb{
@@ -177,6 +190,15 @@ a:hover{
   max-width: 960px;
   margin-left: auto;
   margin-right: auto;
+}
+.featuretext{
+  background-color: rgba(81, 74, 60, .1);
+}
+.featuretext_top a:hover{
+  padding:10px;
+  background: #3b6525;
+  color: white;
+  border-radius: 4px;
 }
 
 /* Alert Page */
@@ -205,13 +227,30 @@ a:hover{
   padding-bottom: 1.5em;
 }
 
+/* Widgets */
+.tribe-events-event-image{
+  text-align: center;
+}
+p.tribe-events-widget-link{
+  text-align: right;
+}
+.widget-title{
+  background: #3b6525;
+  padding: 7px 10px;
+}
+.widget-title a{
+  color: white;
+}
+.widget-title a:hover{
+  background: #325212;
+}
+#secondary{
+  background: #ffffff;
+}
+
 /* Footer */
-.site-footer{
-  background: #325212;
-}
-.footer_container{
-  background: #325212;
-}
+
+
 .site-info{
   background-color: #3b6525;
   color: white;
@@ -220,7 +259,89 @@ a:hover{
 .site-info a{
   color: #ccc;
 }
+.widget ul#menu-footer-links li{
+  display: inline-block;
+  margin-right: 10px;
+  border: none;
+}
+.footer_container .site-logo img{
+  height: 65px;
+}
+.footer_container{
+  background: none;
+}
+.site-footer{
+  background: rgba(81, 74, 60, .2);
+}
+.widget ul#menu-footer-links a{
+  color: #325212;
+}
+.widget ul#menu-footer-links a:hover{
+  background: #3b6525;
+  color: white;
+  border-radius: 4px;
+}
+.footer_container .site-logo{
+  float: right;
+}
+.footer_container .site-logo img:hover{
+  background: rgba(59, 101, 37, .4);
+}
+.footer_container .site-logo a:hover{
+  background: none;
+}
+ul#menu-footer-links.menu{
+  margin: 0;
+}
 
+/* WooCommerce Styles */
+a.pp_previous:hover,
+a.pp_next:hover{
+  background: none;
+}
+.woocommerce div.product .woocommerce-tabs ul.tabs li a:hover{
+  color: green;
+  background: none;
+}
+.woocommerce ul.products li.product a:hover{
+  color: rgba(59, 101, 37, .8);
+}
+.woocommerce form .form-row{
+  display: inline-block;
+}
+#product-484 .woocommerce #content div.product div.summary, .woocommerce div.product div.summary, .woocommerce-page #content div.product div.summary, .woocommerce-page div.product div.summary{
+  width: 100%;
+}
+div.product-addon.product-addon-anonymous{
+  width: 48%;
+  float: right;
+}
+div.product-addon.product-addon-additional-donation-amount{
+  width: 48%;
+  float: left;
+}
+.woocommerce div.product .woocommerce-tabs ul.tabs li.summary_tab_tab{
+  background: rgba(59, 101, 37, 0.7);
+}
+.woocommerce div.product .woocommerce-tabs ul.tabs li.summary_tab_tab.active{
+  background: white;
+  color: #3b6525;
+}
+.woocommerce div.product .woocommerce-tabs ul.tabs li.summary_tab_tab a{
+  color: white;
+}
+.woocommerce div.product .woocommerce-tabs ul.tabs li.summary_tab_tab:hover{
+  background: #3b6525;
+}
+.woocommerce div.product .woocommerce-tabs ul.tabs li.summary_tab_tab.active:hover{
+  background: #ffffff;
+}
+.woocommerce div.product .woocommerce-tabs ul.tabs li.summary_tab_tab.active a{
+  color: #514a3c;
+}
+.woocommerce div.product .woocommerce-tabs ul.tabs li.summary_tab_tab.active a:hover{
+  color: #3b6525;
+}
 @media only screen and (max-width: 800px){
   .flex-caption{
     left: 50%;
@@ -238,6 +359,15 @@ a:hover{
   }
   .info-bar .icons span{
     font-size: 8px;
+  }
+  #secondary{
+    width: 100%;
+  }
+  div.product-addon.product-addon-anonymous{
+    width: 100%;
+  }
+  div.product-addon.product-addon-additional-donation-amount{
+    width: 100%;
   }
 }
 
