@@ -18,7 +18,7 @@
       <div class="footer_container">
         <div class="section group">
 
-          <div class="col span_1_of_3">
+          <div class="col span_2_of_3">
             <?php if ( is_active_sidebar( 'left_column' ) && dynamic_sidebar('left_column') ) : else : ?>
               <div class="widget">
                 <?php echo '<h4>' . __('Widget Ready', 'adamos') . '</h4>'; ?>
@@ -28,20 +28,23 @@
           </div>
 
           <div class="col span_1_of_3">
-            <?php if ( is_active_sidebar( 'center_column' ) && dynamic_sidebar('center_column') ) : else : ?>
-              <div class="widget">
-                <?php echo '<h4>' . __('Widget Ready', 'adamos') . '</h4>'; ?>
-                <?php echo '<p>' . __('This center column is widget ready! Add one in the admin panel.', 'adamos') . '</p>'; ?>
-              </div>
-            <?php endif; ?>
-          </div>
+            <?php if ( get_theme_mod( 'adamos_logo' ) ) : ?>
 
-          <div class="col span_1_of_3">
-            <?php if ( is_active_sidebar( 'right_column' ) && dynamic_sidebar('right_column') ) : else : ?>
-              <div class="widget">
-                <?php echo '<h4>' . __('Widget Ready', 'adamos') . '</h4>'; ?>
-                <?php echo '<p>' . __('This right column is widget ready! Add one in the admin panel.', 'adamos') . '</p>'; ?>
-              </div>
+                <div class="site-logo">
+
+                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo get_theme_mod( 'adamos_logo' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"></a>
+
+                </div>
+
+            <?php else : ?>
+
+                <div class="site-introduction">
+
+                    <h1 class="site-title"><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+                    <p class="site-description"><?php bloginfo( 'description' ); ?></p>
+
+                </div>
+
             <?php endif; ?>
           </div>
 
