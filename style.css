@@ -309,7 +309,10 @@ a.pp_next:hover{
 .woocommerce form .form-row{
   display: inline-block;
 }
-#product-484 .woocommerce #content div.product div.summary, .woocommerce div.product div.summary, .woocommerce-page #content div.product div.summary, .woocommerce-page div.product div.summary{
+.woocommerce #content #product-484.product div.summary,
+.woocommerce div.product #product-484.summary,
+.woocommerce-page #content #product-484.product div.summary,
+.woocommerce-page #product-484.product div.summary{
   width: 100%;
 }
 div.product-addon.product-addon-anonymous{
@@ -342,6 +345,15 @@ div.product-addon.product-addon-additional-donation-amount{
 .woocommerce div.product .woocommerce-tabs ul.tabs li.summary_tab_tab.active a:hover{
   color: #3b6525;
 }
+.woocommerce #content #product-484.product div.images,
+.woocommerce #product-484.product div.images,
+.woocommerce-page #content #product-484.product div.images,
+.woocommerce-page #product-484.product div.images{
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 @media only screen and (max-width: 800px){
   .flex-caption{
     left: 50%;
