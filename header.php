@@ -7,7 +7,9 @@
  * @package adamos
  * @since adamos 2.0
  */
-?><!DOCTYPE html>
+?>
+
+<!DOCTYPE html>
 <!--[if IE 8]>
 <html id="ie8" <?php language_attributes(); ?>>
 <![endif]-->
