@@ -23,11 +23,18 @@ body{
 a, a:visited{
   color: #3b6525;
 }
-/*a:hover{
-  background: #3b6525;
-  color: white;
-  border-radius: 4px;
-}*/
+ul{
+  list-style: square;
+}
+ul ul{
+  list-style: circle;
+}
+ul ul ul{
+  list-style: disc;
+}
+ul{
+  margin: 0 0 1.5em 1.5em;
+}
 
 /* Menu */
 #masthead-top{
@@ -41,7 +48,7 @@ a, a:visited{
 }
 .site-header a img{
   margin: 0.5em auto 0.5em;
-  height: 70px;
+  height: 150px;
 }
 .header_container{
   min-height: 0px;
@@ -174,7 +181,7 @@ a, a:visited{
 .entry-content a:visited,
 .entry-summary a,
 .entry-summary a:visited{
-  color: rgba(59, 101, 37, 0.8);
+  color: #859b53;
 }
 #primary{
   margin: 0 -37% 0 0;
@@ -182,6 +189,9 @@ a, a:visited{
 }
 #secondary{
   width: 30%;
+}
+.entry-content ul li ul li{
+  list-style-type: circle;
 }
 
 /* Home Page */
@@ -225,6 +235,43 @@ a, a:visited{
 }
 .alerts{
   padding-bottom: 1.5em;
+}
+
+/* CCC History Pages */
+ul#menu-ccc-life-navigation{
+  margin: 0;
+  margin-bottom: 25px;
+  padding: 0;
+}
+ul#menu-ccc-life-navigation li{
+  display: inline-block;
+  list-style-type: none;
+}
+ul#menu-ccc-life-navigation li:after{
+  content: " | ";
+}
+ul#menu-ccc-life-navigation li:last-child:after{
+  content: none;
+}
+ul#menu-ccc-life-navigation li{
+  margin-left: 0;
+}
+
+/* Photo Gallery */
+.slideshow-slide-caption{
+  font-weight: bold;
+  color: #514a3c!important;
+  text-shadow: 0 1px 15px rgba(231,234,227, 1),
+               0 0 15px rgba(231,234,227, 1),
+               0 0px 15px rgba(231,234,227, 1),
+               0 3px 15px rgba(231,234,227, 1),
+               0 5px 15px rgba(231,234,227, 1),
+               0 0px 15px rgba(231,234,227, 1),
+               0 0px 25px rgba(231,234,227, 1)!important;
+}
+.slideshow-window{
+  background-color: #E7EAE3!important;
+  border: 20px solid #E7EAE3!important;
 }
 
 /* Widgets */
@@ -309,17 +356,26 @@ a.pp_next:hover{
 .woocommerce form .form-row{
   display: inline-block;
 }
+.product_cat-donation div.product-addon{
+  display: inline-block;
+}
+.woocommerce .product_cat-donation.product form.cart div.quantity{
+  float: none;
+}
+.woocommerce .product_cat-donation.product form.cart .button{
+  float: none;
+}
 .woocommerce #content #product-484.product div.summary,
 .woocommerce div.product #product-484.summary,
 .woocommerce-page #content #product-484.product div.summary,
 .woocommerce-page #product-484.product div.summary{
   width: 100%;
 }
-div.product-addon.product-addon-anonymous{
+#product-484 div.product-addon.product-addon-anonymous{
   width: 48%;
   float: right;
 }
-div.product-addon.product-addon-additional-donation-amount{
+#product-484 div.product-addon.product-addon-additional-donation-amount{
   width: 48%;
   float: left;
 }
@@ -348,10 +404,22 @@ div.product-addon.product-addon-additional-donation-amount{
 .woocommerce #content #product-484.product div.images,
 .woocommerce #product-484.product div.images,
 .woocommerce-page #content #product-484.product div.images,
-.woocommerce-page #product-484.product div.images{
+.woocommerce-page #product-484.product div.images,
+.woocommerce #content .product_cat-donation.product div.images,
+.woocommerce .product_cat-donation.product div.images,
+.woocommerce-page #content .product_cat-donation.product div.images,
+.woocommerce-page .product_cat-donation.product div.images{
   float: none;
   margin-left: auto;
   margin-right: auto;
+}
+.woocommerce #content .product_cat-donation.product div.summary,
+.woocommerce .product_cat-donation.product div.summary,
+.woocommerce-page #content .product_cat-donation.product div.summary,
+.woocommerce-page .product_cat-donation.product div.summary{
+  width: 100%;
+  float: none;
+  text-align: center;
 }
 
 @media only screen and (max-width: 800px){

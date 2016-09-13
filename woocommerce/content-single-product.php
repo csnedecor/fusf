@@ -47,7 +47,6 @@ if ( ! defined( 'ABSPATH' ) ) {
      */
     do_action( 'woocommerce_before_single_product_summary' );
   ?>
-
 <?php if (get_the_ID() != 484){ ?>
   <div class="summary entry-summary">
 

@@ -42,7 +42,7 @@ function add_custom_customizer($wp_customize) {
   $wp_customize->add_section( 'homepage_slider', array(
     'title'           => __( 'Homepage Slider', 'adamos' ),
     'description'     => __( 'Add images to the homepage slider. Your theme recommends a header size of 1400 × 500 pixels. ', 'adamos' ),
-    'panel'       => 'adamos_header_panel',
+    'panel'       => 'adamos_homepage_panel',
     'priority'  => 3,
   ));
 

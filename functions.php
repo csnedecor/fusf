@@ -30,6 +30,14 @@ function woo_summary_tab_content() {
 }
 add_filter( 'woocommerce_product_tabs', 'woo_summary_tab' );
 
+
+// Register Menu for History Pages
+function register_fusf_menus() {
+  register_nav_menu('history-menu',__( 'History Menu' ));
+  register_nav_menu('ccc-life-menu',__( 'CCC Life Menu' ));
+}
+add_action( 'init', 'register_fusf_menus' );
+
 // Theme Options
 include('functions/customizer_settings.php');
 ?>

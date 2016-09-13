@@ -286,7 +286,7 @@
         endif;
         if ($alert_count >= 1) { ?>
           <div class="icons">
-            <a href="/alerts">
+            <a href="<?php echo esc_url(home_url()); ?>/alerts">
               <i class="fa fa-exclamation-triangle fa-lg">
                 <div class="alert-number"><?php echo $alert_count ?></div>
                 <br/><span>Alerts</span>
