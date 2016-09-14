@@ -38,6 +38,30 @@ function register_fusf_menus() {
 }
 add_action( 'init', 'register_fusf_menus' );
 
+/**
+ * Revise the Custom Header feature
+ */
+function fusf_custom_header_setup() {
+
+  $args = array(
+      'default-image'          => '',
+      'default-text-color'     => 'FFF',
+      'width'                  => 1400,
+      'height'                 => 300,
+      'flex-height'            => true,
+      'wp-head-callback'       => 'adamos_header_style',
+      'admin-head-callback'    => 'adamos_admin_header_style',
+      'admin-preview-callback' => 'adamos_admin_header_image',
+    );
+
+    $args = apply_filters( 'fusf_custom_header_args', $args );
+
+    if ( function_exists( 'wp_get_theme' ) ) {
+      add_theme_support( 'custom-header', $args );
+  }
+
+}
+add_action( 'after_setup_theme', 'fusf_custom_header_setup' );
+
 // Theme Options
 include('functions/customizer_settings.php');
-?>

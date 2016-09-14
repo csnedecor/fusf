@@ -54,8 +54,17 @@ ul{
   min-height: 0px;
   background-color: #ffffff;
 }
+.main-navigation{
+  padding-top: 55px;
+  width: 80%;
+}
 .main-navigation a{
   color: #325212;
+  font-size: 13px;
+  margin-right: 0px;
+}
+.main-navigation ul ul{
+  top: 2.1em;
 }
 .main-navigation ul ul li{
   border-bottom: 1px solid #514a3c;
@@ -112,7 +121,7 @@ ul{
   display: block;
 }
 .info-bar{
-  background-color: #325212;
+  background-color: #ffffff;
   color: white;
   border-top: 1px solid #514a3c;
   border-bottom: 1px solid #514a3c;
@@ -135,6 +144,8 @@ ul{
   display: inline-block;
   margin-left: 10px;
   margin-right: 10px;
+  background: #325212;
+  border-radius: 10px;
 }
 .alert-number{
   background: red;

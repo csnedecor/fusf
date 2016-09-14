@@ -80,7 +80,7 @@ function add_custom_customizer($wp_customize) {
         'section'     => 'homepage_slider',
         'settings'    => 'homepage_slider_image_1',
         'width'       => 1400,
-        'height'      => 500
+        'height'      => 300
       )
     )
   );
@@ -136,7 +136,7 @@ function add_custom_customizer($wp_customize) {
         'section'     => 'homepage_slider',
         'settings'    => 'homepage_slider_image_2',
         'width'       => 1400,
-        'height'      => 500
+        'height'      => 300
       )
     )
   );
@@ -192,7 +192,7 @@ function add_custom_customizer($wp_customize) {
         'section'     => 'homepage_slider',
         'settings'    => 'homepage_slider_image_3',
         'width'       => 1400,
-        'height'      => 500
+        'height'      => 300
       )
     )
   );
